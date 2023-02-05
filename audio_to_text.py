@@ -2,7 +2,6 @@
 
 # speech_recognition module
 import speech_recognition as sr
-import unittest.mock as mockn
 
 # this is the sr recongnizer class instance
 rec = sr.Recognizer()
@@ -14,4 +13,4 @@ with havard as source:
     audio = rec.record(source)
 
 # repsonse
-response = rec.recognize_google(audio, show_all=False)
+print(rec.recognize_google(audio, show_all=False))
