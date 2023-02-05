@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
+"""
 
-# speech_recognition module
+Function:
+    Prints all possible
+    transcibes of an audio
+
+AudioFileType:
+    WAV
+
+Imports:
+    Package: speech_recognition
+    Recognizer: recognize_google
+
+"""
+
+# Imports
 import speech_recognition as sr
 
 # this is the sr recongnizer class instance
@@ -13,4 +27,13 @@ with havard as source:
     audio = rec.record(source)
 
 # repsonse
-print(rec.recognize_google(audio, show_all=True)['alternative'][0]['transcript'])
+num = 0
+while True:
+    try:
+        print("{}) ".format(num + 1) , rec.recognize_google(audio, show_all=True)['alternative']
+              [num]['transcript'])
+        num += 1
+
+    except IndexError:
+        print("END")
+        break
