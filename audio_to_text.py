@@ -13,4 +13,4 @@ with havard as source:
     audio = rec.record(source)
 
 # repsonse
-print(rec.recognize_google(audio, show_all=False))
+print(rec.recognize_google(audio, show_all=True)['alternative'][0]['transcript'])
